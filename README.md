@@ -23,7 +23,7 @@ method.insertHook(index, relocateBranchTargets = true) {
 
 | | |
 |---|---|
-| Coordinates | `crimera:morphe-bytecode:0.1.0` |
+| Coordinates | `crimera:morphe-bytecode:0.1.1` |
 | Registry | GitHub Packages, `https://maven.pkg.github.com/crimera/morphe-bytecode` |
 | License | GPL-3.0-or-later, see `LICENSE` and `NOTICE` |
 
@@ -45,7 +45,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("crimera:morphe-bytecode:0.1.0")
+    implementation("crimera:morphe-bytecode:0.1.1")
 }
 ```
 
@@ -81,5 +81,5 @@ its producing invoke is rejected.
 
 ## Publish
 
-Tag `v0.1.0` (or run the workflow manually) — `.github/workflows/publish.yml` publishes to
+Tag `v0.1.1` (or run the workflow manually) — `.github/workflows/publish.yml` publishes to
 GitHub Packages with the tag as the version.
