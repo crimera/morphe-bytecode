@@ -1,0 +1,19 @@
+morphe-bytecode
+Copyright (C) 2026 crimera
+
+This library provides typed Dalvik bytecode emission for Morphe patches. Its
+emitter vocabulary (move, iget, iput, sget, sput, moveResult, insertHook and the
+type-driven opcode selectors) and parts of its helper set follow the Reseam
+patch API:
+
+    Reseam - Rust APK patching engine with a Kotlin patch API
+    Copyright (C) 2026 AunAli K. <hello@auna.li>
+    Licensed under GPL-3.0-or-later (SPDX-License-Identifier: GPL-3.0-or-later)
+
+The implementation here is independent: it emits through Morphe's dexlib2
+builder and takes its registers from Morphe's liveness search, rather than
+growing the Dalvik frame the way Reseam's engine does. See the file header in
+src/main/kotlin/app/crimera/bytecode/Block.kt.
+
+This project is licensed under the GNU General Public License v3.0 or later; the
+full text is in LICENSE.
