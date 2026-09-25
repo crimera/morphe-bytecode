@@ -25,6 +25,7 @@ method.insertHook(index, relocateBranchTargets = true) {
 |---|---|
 | Coordinates | `crimera:morphe-bytecode:0.1.1` |
 | Registry | GitHub Packages, `https://maven.pkg.github.com/crimera/morphe-bytecode` |
+| JVM target | 11, matching what Morphe patch modules compile against |
 | License | GPL-3.0-or-later, see `LICENSE` and `NOTICE` |
 
 GitHub Packages requires credentials even for public packages. In `settings.gradle.kts`:
@@ -54,7 +55,7 @@ artifact automatically:
 
 ```kotlin
 // settings.gradle.kts of the consuming build
-includeBuild("../morphe-bytecode")
+includeBuild("../morphe-bytecode") // or morphe-bytecode-lib, the path CI checks out
 ```
 
 ## API
