@@ -13,6 +13,9 @@ jobs:
     permissions:
       contents: read
       packages: write
+    env:
+      # MorpheApp's registry requires authentication, so no Gradle step may go without it.
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -44,8 +47,6 @@ jobs:
 
       - name: Test
         run: ./gradlew test --no-daemon
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         run: |
@@ -54,5 +55,3 @@ jobs:
           else
             ./gradlew publish --no-daemon
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
