@@ -33,6 +33,15 @@ jobs:
             echo "value=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Verify artifact layout
+        run: |
+          set -euo pipefail
+          ./gradlew jar --no-daemon
+          JAR=$(ls build/libs/morphe-bytecode-*.jar | grep -v sources | head -1)
+          unzip -l "$JAR" | grep -q 'app/crimera/bytecode/Block.class'
+          unzip -l "$JAR" | grep -q 'META-INF/NOTICE'
+          echo "$JAR: classes at the root, notices in META-INF"
+
       - name: Test
         run: ./gradlew test --no-daemon
         env:

@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "crimera"
-version = providers.gradleProperty("bytecodeVersion").getOrElse("0.1.0")
+version = providers.gradleProperty("bytecodeVersion").getOrElse("0.1.3")
 description = "Typed Dalvik bytecode emission for Morphe patches"
 
 java {
@@ -43,11 +43,11 @@ tasks.test {
 
 // The credit and the licence travel with the artifact, not just the repository.
 tasks.jar {
-    from("LICENSE", "NOTICE").into("META-INF")
+    metaInf { from("LICENSE", "NOTICE") }
 }
 
 tasks.named<Jar>("sourcesJar") {
-    from("LICENSE", "NOTICE").into("META-INF")
+    metaInf { from("LICENSE", "NOTICE") }
 }
 
 publishing {
