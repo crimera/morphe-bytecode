@@ -73,6 +73,15 @@ closed when the request cannot be encoded; try-block boundaries, exception handl
 switch/fill-array-data payload labels are never relocated; an inserted `move-result` without
 its producing invoke is rejected.
 
+## Credits
+
+- [Reseam](https://github.com/Reseam/reseam) — the patch API whose typed emitter vocabulary
+  (`move`, `iget`, `iput`, `sget`, `sput`, `moveResult`, `insertHook`, type-driven opcode
+  selection) this library follows. Copyright (C) 2026 AunAli K. `<hello@auna.li>`, licensed
+  GPL-3.0-or-later. See [`NOTICE`](NOTICE).
+- [Morphe](https://github.com/MorpheApp) — the patcher and dexlib2 pipeline this library emits
+  through.
+
 ## Build
 
 ```bash

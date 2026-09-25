@@ -41,6 +41,15 @@ tasks.test {
     testLogging { events("failed") }
 }
 
+// The credit and the licence travel with the artifact, not just the repository.
+tasks.jar {
+    from("LICENSE", "NOTICE").into("META-INF")
+}
+
+tasks.named<Jar>("sourcesJar") {
+    from("LICENSE", "NOTICE").into("META-INF")
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {

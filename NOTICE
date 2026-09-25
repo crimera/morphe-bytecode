@@ -7,6 +7,7 @@ type-driven opcode selectors) and parts of its helper set follow the Reseam
 patch API:
 
     Reseam - Rust APK patching engine with a Kotlin patch API
+    https://github.com/Reseam/reseam
     Copyright (C) 2026 AunAli K. <hello@auna.li>
     Licensed under GPL-3.0-or-later (SPDX-License-Identifier: GPL-3.0-or-later)
 
