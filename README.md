@@ -96,6 +96,10 @@ Stability here means failing *earlier*, not emitting different code: instruction
 methods are unchanged, and sampled migrations emitted slightly fewer code units (tighter
 `move`/`const` encodings, `35c` instead of `3rc` for consecutive operands).
 
+Each row is a failure class the guards reject, not a claim that it was hit in the field: the
+jump-bypass, 4-bit-register and descriptor rows answer real incidents from the 12.29 port, the rest
+are design-time rules pinned by the tests in `src/test/kotlin/app/crimera/bytecode/BytecodeTest.kt`.
+
 ## Credits
 
 - [Reseam](https://github.com/Reseam/reseam) — the patch API whose typed emitter vocabulary
